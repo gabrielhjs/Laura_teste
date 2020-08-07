@@ -50,7 +50,7 @@ seguinte maneira:
 </p>
 
 <ol>
-    <li>Listar todos os itens de uma modalidade em um período ordenados por data</li>
+    <li>Listar todos os itens de uma modalidade em um período ordenados por data
     <ol type="a">
         <li>Tipo da requisição: GET</li>
         <li>Parâmetros: modalidade, data de início e data de fim</li>
@@ -58,36 +58,42 @@ seguinte maneira:
         passado e ordenando de forma decrescente pela data dos
         documentos.</li>
     </ol>
-    <li>Listar todos os cursos de um campus</li>
+    </li>
+    <li>Listar todos os cursos de um campus
     <ol type="a">
         <li>Tipo da requisição: [a definir]</li>
         <li>Parâmetros: campus</li>
         <li>Retorno: lista de cursos do campus</li>
     </ol>
-    <li>Descobrir número total de alunos num campus em um dado período</li>
+    </li>
+    <li>Descobrir número total de alunos num campus em um dado período
     <ol type="a">
         <li>Tipo de requisição: [a definir]</li>
         <li>Parâmetros: campus, data de início e data de fim</li>
         <li>Retorno: número de alunos do campus no período</li>
     </ol>
-    <li>Cadastrar alunos</li>
+    </li>
+    <li>Cadastrar alunos
     <ol type="a">
         <li>Tipo da requisição: [a definir]</li>
         <li>Parâmetros: nome, idade_ate_31_12_2016, ra, campus, município, curso, modalidade, nivel_do_curso, data_inicio</li>
         <li>Retorno: sucesso/erro</li>
     </ol>
-    <li>Buscar aluno</li>
+    </li>
+    <li>Buscar aluno
     <ol type="a">
         <li>Tipo da requisição: [a definir]</li>
         <li>Parâmetro: ra</li>
         <li>Retorno: todos os dados do aluno</li>
     </ol>
-    <li>Remover aluno do banco</li>
+    </li>
+    <li>Remover aluno do banco
     <ol type="a">
         <li>Tipo da requisição: [a definir]</li>
         <li>Parâmetros: ra, campus</li>
         <li>Retorno: sucesso/erro</li>
     </ol>
+    </li>
 </ol>
 
 > Obs: o retorno de cada requisição deve ser um JSON válido.
