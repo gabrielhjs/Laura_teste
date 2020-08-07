@@ -48,9 +48,8 @@ de cada um dos endpoints (com exceção do primeiro), bem como seus status de re
 da aplicação deverá estar em arquivo de nome server.py. Na aplicação, a API deve ser feita da
 seguinte maneira:
 </p>
-
 <ol>
-    <li>Listar todos os itens de uma modalidade em um período ordenados por data
+    <li> - [x] Listar todos os itens de uma modalidade em um período ordenados por data
     <ol type="a">
         <li>Tipo da requisição: GET</li>
         <li>Parâmetros: modalidade, data de início e data de fim</li>
