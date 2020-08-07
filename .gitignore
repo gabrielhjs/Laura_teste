@@ -2,3 +2,4 @@ venv_laura/
 **/__pycache__/**
 .idea/
 env_file.env
+dataset_estudantes.csv

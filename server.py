@@ -1,10 +1,10 @@
 """
 Arquivo de execução da aplicação
 """
-from flask import Flask, json, request, Response
+from flask import Flask, json, Response
 
 # Importando extensões da aplicação (banco de dados)
-from extensions import database
+from extensions import mongo
 
 # Importando rotas dos aplicativos
 from apps.school.routes import school_routes
@@ -16,7 +16,7 @@ app.config.from_object("settings.Config")
 
 
 # Iniciando conexão com o banco de dados
-database.init_app(app)
+mongo.init_app(app)
 
 
 # Incluindo rotas de aplicativos
