@@ -49,7 +49,7 @@ da aplicação deverá estar em arquivo de nome server.py. Na aplicação, a API
 seguinte maneira:
 </p>
 <ol>
-    <li> [ ] Listar todos os itens de uma modalidade em um período ordenados por data
+    <li>Listar todos os itens de uma modalidade em um período ordenados por data
     <ol type="a">
         <li>Tipo da requisição: GET</li>
         <li>Parâmetros: modalidade, data de início e data de fim</li>
