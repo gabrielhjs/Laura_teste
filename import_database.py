@@ -1,8 +1,7 @@
 """
-Módulo que importará os dados da planilha para o banco de dados
+Módulo que importa os dados da planilha para o banco de dados
 """
 import pandas as pd
-import numpy as np
 from pymongo import MongoClient
 from bson.son import SON
 
@@ -19,6 +18,12 @@ def connect_database() -> MongoClient:
 
 
 def read_csv(file: str) -> pd.DataFrame:
+    """
+    Função que realiza a leitura do arquivo csv
+    :param file: Nome do arquivo
+    :return: DataFrame com os dados do arquivo
+    """
+    print("Realizando a leitura dos dados do arquivo...", end="")
 
     df = pd.read_csv(
         file,
@@ -37,8 +42,17 @@ def read_csv(file: str) -> pd.DataFrame:
         },
         parse_dates=["data_inicio"],
     )
+
     df.where(df.notnull(), None)
 
+    df["nome"] = df["nome"].str.strip()
+    df["campus"] = df["campus"].str.strip()
+    df["municipio"] = df["municipio"].str.strip()
+    df["curso"] = df["curso"].str.strip()
+    df["modalidade"] = df["modalidade"].str.strip()
+    df["nivel_do_curso"] = df["nivel_do_curso"].str.strip()
+
+    print("OK")
     return df
 
 
@@ -48,6 +62,7 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
     :param df: dataset
     :param db: banco de dados
     """
+    print("Formatando dados...", end="")
     collection_students = db["students"]
     collection_students.drop()
     collection_students = db["students"]
@@ -106,11 +121,15 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
                     ])
                 )
 
+    print("OK")
+    print("Inserindo dados no banco de dados...", end="")
+
     collection_students.insert_many(students_list)
+
+    print("OK")
 
 
 if __name__ == "__main__":
     mongo = connect_database()
     dataset = read_csv("dataset_estudantes.csv")
-
     create_collection_students(dataset, mongo)
