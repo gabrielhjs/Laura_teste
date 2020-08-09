@@ -263,21 +263,6 @@ que contém todos os dados da aplicação. O ra de cada estudante é
             }
         }
     },
-    {
-        "name": "ANA AUGUSTA VICTORIO FLORES",
-        "age": 41.0,
-        "ra": 13468.0,
-        "courses": {
-            "campus": "AQ",
-            "county": "Aquidauana",
-            "course": "TÉCNICO EM INFORMÁTICA",
-            "modality": "PRESENCIAL",
-            "level": "SUBSEQUENTE",
-            "start_date": {
-                "$date": 1437955200000
-            }
-        }
-    },
    "continua..."
 ]
 ```
@@ -313,62 +298,7 @@ que contém todos os dados da aplicação. O ra de cada estudante é
         "_id": "TL",
         "courses": "GRUPO DE ROBÓTICA"
     },
-    {
-        "_id": "TL",
-        "courses": "INGLÊS BÁSICO"
-    },
-    {
-        "_id": "TL",
-        "courses": "OPERADOR DE COMPUTADOR"
-    },
-    {
-        "_id": "TL",
-        "courses": "SISTEMAS PARA INTERNET"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM ADMINISTRAÇÃO"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM AGENTE COMUNITÁRIO DE SAÚDE"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM AUTOMAÇÃO INDUSTRIAL"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM EDIFICAÇÕES"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM ELETROTÉCNICA"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM INFORMÁTICA"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM MANUTENÇÃO E SUPORTE EM INFORMÁTICA"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM REABILITAÇÃO DE DEPENDENTES QUÍMICOS"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM SERVIÇOS PÚBLICOS"
-    },
-    {
-        "_id": "TL",
-        "courses": "TÉCNICO EM TRANSAÇÕES IMOBILIÁRIAS"
-    },
-    {
-        "_id": "TL",
-        "courses": "VENDEDOR"
-    }
+    "continua..."
 ]
 ```
 
