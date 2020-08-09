@@ -1,4 +1,4 @@
-<h1 align="center">
+	<h1 align="center">
   Processo seletivo backend 2019 - Teste prático
 </h1>
 <h3 align="center">
@@ -144,7 +144,7 @@ outro mais recente) fica por sua conta.
 </ul>
 <h4>Instalação</h4>
 
-> **_NOTA:_** Repositório privado
+> **_NOTA:_** Repositório público
 
 ```console
 git clone https://github.com/gabrielhjs/Laura_teste.git
