@@ -1,11 +1,11 @@
 <h1 align="center">
   Processo seletivo backend 2019 - Teste prático
 </h1>
-<h6 align="center">
+<h3 align="center">
   <a href="#Teste">Teste</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Documentação">Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Candidato">Candidato</a>
-</h6>
+</h3>
 <br>
 
 ## Teste
