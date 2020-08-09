@@ -3,10 +3,14 @@
 </h1>
 <h3 align="center">
   <a href="#Teste">Teste</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#Documentação">Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#Candidato">Candidato</a>
+  <a href="#Documentação">Documentação</a>
 </h3>
 <br>
+
+<h3>Autor: Gabriel Sá</h3>
+
+- [GitHub](https://github.com/gabrielhjs)
+- [Linkedin](https://www.linkedin.com/in/gabrielhjs/)
 
 ## Teste
 
