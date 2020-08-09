@@ -145,7 +145,8 @@ outro mais recente) fica por sua conta.
 ```console
 git clone https://github.com/gabrielhjs/Laura_teste.git
 cd Laura_teste
-virtualenv venv_laura_teste
+virtualenv venv_laura
+. venv_laura\scripts\activate
 ```
 
 > **_NOTA:_** Crie uma máquina virtual
