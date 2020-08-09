@@ -282,7 +282,7 @@ que contém todos os dados da aplicação. O ra de cada estudante é
 ]
 ```
 
-##### 1. Busca todos os cursos de um campus: `GET /api/school/campus/<campus>/`
+##### 2. Busca todos os cursos de um campus: `GET /api/school/campus/<campus>/`
 <p>Exemplo de resultado:</p>
 
 `GET /api/school/campus/tl/`
