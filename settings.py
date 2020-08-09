@@ -1,5 +1,5 @@
 """
-Arquivo de configurações do projeto
+Módulo de configurações do projeto
 """
 import os
 from dotenv import load_dotenv
@@ -18,3 +18,6 @@ class Config(object):
 
     # Configurando variável de conexão com o banco de dados
     MONGO_URI = str(os.getenv("SERVER_URI"))
+
+    # Habilitando cache
+    CACHE_TYPE = str(os.getenv("CACHE_TYPE"))  # O tipo "simple" está sendo usado apenas para demonstração

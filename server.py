@@ -4,10 +4,10 @@ Arquivo de execução da aplicação
 from flask import Flask, json, Response
 
 # Importando extensões da aplicação (banco de dados)
-from extensions import mongo
+from extensions import mongo, cache
 
 # Importando rotas dos aplicativos
-from apps.school.routes import school_routes
+from apps.school.controllers import school_routes
 
 
 # Criando aplicação
@@ -16,7 +16,10 @@ app.config.from_object("settings.Config")
 
 
 # Iniciando conexão com o banco de dados
+# Número máximo de itens: 10
+# Defaul timeout: 500
 mongo.init_app(app)
+cache.init_app(app, config={"CACHE_TYPE": "simple", "CACHE_THRESHOLD": 10, "CACHE_DEFAULT_TIMEOUT": 500})
 
 
 # Incluindo rotas de aplicativos

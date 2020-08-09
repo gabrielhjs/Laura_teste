@@ -9,11 +9,16 @@ import settings
 
 
 def connect_database() -> MongoClient:
+    """
+    Função que realia a conexão com o banco de dados
+    :return: conexão com o banco
+    """
+    print("Conectando-se com o banco de dados...", end="")
 
     client = MongoClient(settings.Config().MONGO_URI)
-
     db = client["database1"]
 
+    print("OK")
     return db
 
 
@@ -25,6 +30,7 @@ def read_csv(file: str) -> pd.DataFrame:
     """
     print("Realizando a leitura dos dados do arquivo...", end="")
 
+    # Lendo arquivo csv
     df = pd.read_csv(
         file,
         delimiter=",",
@@ -43,8 +49,10 @@ def read_csv(file: str) -> pd.DataFrame:
         parse_dates=["data_inicio"],
     )
 
+    # Substituindo NaN por None
     df.where(df.notnull(), None)
 
+    # Retirando espaços no começo e fim das strings
     df["nome"] = df["nome"].str.strip()
     df["campus"] = df["campus"].str.strip()
     df["municipio"] = df["municipio"].str.strip()
@@ -63,13 +71,17 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
     :param db: banco de dados
     """
     print("Formatando dados...", end="")
+
+    # Recriando a collection students
     collection_students = db["students"]
     collection_students.drop()
     collection_students = db["students"]
 
+    # Filtrando dados de alunos e retirando duplicatas
     students = df[["nome", "idade_ate_31_12_2016", "ra"]]
     students = students.drop_duplicates()
 
+    # Criando lista de alunos
     students_list = []
 
     for student in students.values:
@@ -82,6 +94,7 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
             }
         )
 
+    # Filtrando cursos de alunos
     courses = df[[
         "nome",
         "campus",
@@ -92,6 +105,7 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
         "data_inicio",
     ]]
 
+    # Criando lista de cursos
     courses_list = []
 
     for course in courses.values:
@@ -107,6 +121,7 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
             }
         )
 
+    # Inserindo cursos na lista de alunos
     for course in courses_list:
         for student in students_list:
             if course["name"] == student["name"]:
@@ -124,12 +139,14 @@ def create_collection_students(df: pd.DataFrame, db: MongoClient) -> None:
     print("OK")
     print("Inserindo dados no banco de dados...", end="")
 
+    # Inserindo dados formatados na collection students
     collection_students.insert_many(students_list)
 
     print("OK")
 
 
 if __name__ == "__main__":
+    # Polando banco de dados
     mongo = connect_database()
     dataset = read_csv("dataset_estudantes.csv")
     create_collection_students(dataset, mongo)
